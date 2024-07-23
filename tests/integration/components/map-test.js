@@ -23,27 +23,27 @@ module('Integration | Component | map', function (hooks) {
       .hasAttribute('width', '150')
       .hasAttribute('height', '120');
 
-      let { src } = find('.map img');
-      let token = encodeURIComponent(ENV.GEOAPIFY_ACESS_TOKEN);
+    let { src } = find('.map img');
+    let token = encodeURIComponent(ENV.GEOAPIFY_ACESS_TOKEN);
 
-      assert.ok(
-        src.startsWith('https://maps.geoapify.com/'),
-        'the src starts with "https://maps.geoapify.com/"',
-      );
+    assert.ok(
+      src.startsWith('https://maps.geoapify.com/'),
+      'the src starts with "https://maps.geoapify.com/"',
+    );
 
-      assert.ok(
-        src.includes('-122.4184,37.7797,10'),
-        'the src should include the lng,lat,zoom parameter',
-      );
-  
-      assert.ok(
-        src.includes('150x120@2x'),
-        'the src should include the width,height and @2x parameter',
-      );
-  
-      assert.ok(
-        src.includes(`access_token=${token}`),
-        'the src should include the escaped access token',
-      );
-    });
+    assert.ok(
+      src.includes('-122.4184,37.7797,10'),
+      'the src should include the lng,lat,zoom parameter',
+    );
+
+    assert.ok(
+      src.includes('150x120@2x'),
+      'the src should include the width,height and @2x parameter',
+    );
+
+    assert.ok(
+      src.includes(`access_token=${token}`),
+      'the src should include the escaped access token',
+    );
   });
+});
