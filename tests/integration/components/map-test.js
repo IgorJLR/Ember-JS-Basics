@@ -19,7 +19,7 @@ module('Integration | Component | map', function (hooks) {
       .dom('.map img')
       .exists()
       .hasAttribute('alt', 'Map image at coordinates 37.7797,-122.4184')
-      .hasAttribute('src')
+      .hasAttribute('src');
     let { src } = find('.map img');
     let token = encodeURIComponent(ENV.GEOAPIFY_ACESS_TOKEN);
   });
