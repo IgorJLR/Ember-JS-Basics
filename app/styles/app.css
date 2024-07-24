@@ -292,6 +292,7 @@ p {
 .rental .image.large {
   margin: 30px 25px 50px;
   flex-basis: 100%;
+  transition: 1s;
 }
 
 .rental .image small {
